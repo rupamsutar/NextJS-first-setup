@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const clients = [
   {
@@ -13,6 +14,11 @@ const clients = [
 ];
 
 const Clients = () => {
+  const router = useRouter();
+  const loadHandler = () => {
+    router.push("clients/RupamsProject/NextJS-will-be-in-tech-stack");
+  };
+
   return (
     <div>
       <h1>The Clients Page</h1>
@@ -30,6 +36,7 @@ const Clients = () => {
           </li>
         ))}
       </ul>
+      <button onClick={loadHandler}>Load a project</button>
     </div>
   );
 };
